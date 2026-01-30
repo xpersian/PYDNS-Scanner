@@ -1,0 +1,9 @@
+results/
+logs/
+result/
+log/
+*.partial
+__pycache__/
+*.pyc
+.venv/
+slipstream-client/
