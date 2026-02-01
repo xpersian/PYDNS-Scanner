@@ -953,6 +953,10 @@ class DNSScannerTUI(App):
     BINDINGS = [
         ("s", "start_scan", "Start"),
         ("q", "quit", "Quit"),
+        ("c", "save_results", "Save"),
+        ("p", "pause_scan", "Pause"),
+        ("r", "resume_scan", "Resume"),
+        ("x", "shuffle_ips", "Shuffle"),
     ]
 
     def __init__(self):
@@ -1236,36 +1240,9 @@ class DNSScannerTUI(App):
         os._exit(0)
 
     def _update_keybinding_visibility(self, scanning: bool = False, paused: bool = False) -> None:
-        """Update keybinding visibility based on app state."""
-        try:
-            # Rebuild BINDINGS based on state
-            if scanning:
-                if paused:
-                    # Paused: show quit, copy, resume, shuffle
-                    self.__class__.BINDINGS = [
-                        ("q", "quit", "Quit"),
-                        ("c", "save_results", "Copy"),
-                        ("r", "resume_scan", "Resume"),
-                        ("s", "shuffle_ips", "Shuffle"),
-                    ]
-                else:
-                    # Running: show quit, copy, pause
-                    self.__class__.BINDINGS = [
-                        ("q", "quit", "Quit"),
-                        ("c", "save_results", "Copy"),
-                        ("p", "pause_scan", "Pause"),
-                    ]
-            else:
-                # Start screen - show Start and Quit
-                self.__class__.BINDINGS = [
-                    ("s", "start_scan", "Start"),
-                    ("q", "quit", "Quit"),
-                ]
-            
-            # Force refresh bindings by calling refresh_bindings
-            self.refresh_bindings()
-        except Exception:
-            pass
+        """Update keybinding visibility based on app state - now shows all bindings."""
+        # All bindings are always visible in footer
+        pass
 
     def action_pause_scan(self) -> None:
         """Keybinding action to pause scan."""

@@ -46,10 +46,10 @@
 ### ⌨️ Keyboard Shortcuts
 - **S** - Start scan (from config screen)
 - **Q** - Quit application
-- **C** - Copy/Save results to file
+- **C** - Save results to file
 - **P** - Pause scan (while scanning)
 - **R** - Resume scan (when paused)
-- **S** - Shuffle remaining IPs (when paused)
+- **X** - Shuffle remaining IPs (when paused)
 
 ### 🔔 Improved Audio
 - **Single Coin Sound** - Clean, single sparkle/coin notification on successful proxy test
@@ -288,10 +288,10 @@ Create a text file with one CIDR range per line:
 |-----|------|--------|
 | `s` | Config screen | Start scan |
 | `q` | Anytime | Quit application |
-| `c` | While scanning | Copy/Save results |
+| `c` | While scanning | Save results |
 | `p` | While scanning | Pause scan |
 | `r` | When paused | Resume scan |
-| `s` | When paused | Shuffle remaining IPs |
+| `x` | When paused | Shuffle remaining IPs |
 
 ## 🎮 Control Buttons
 
